@@ -1,0 +1,10 @@
+package _4章;
+
+public class _4_2_1 {
+
+	public static void main(String[] args) {
+		
+		int[] scores;
+		scores = new int[5];
+	}
+}
