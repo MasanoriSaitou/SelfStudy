@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="型 &apos;_2章._2ー7&apos; を &apos;_2ー7_練習問題&apos; に名前変更します&#x0D;&#x0A;- 元のプロジェクト: &apos;test01&apos;&#x0D;&#x0A;- オリジナル要素: &apos;_2章._2ー7&apos;&#x0D;&#x0A;- 名前変更済み要素: &apos;_2章._2ー7_練習問題&apos;&#x0D;&#x0A;- リファクタリングされた要素の参照を更新&#x0D;&#x0A;- コメントおよびストリング内のテキスト出現箇所の更新" description="型名 &apos;_2ー7&apos; を変更します" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;_2章{_2ー7.java[_2ー7" matchStrategy="1" name="_2ー7_練習問題" qualified="false" references="true" similarDeclarations="false" stamp="1654964628721" textual="false" version="1.0"/>
+</session>
