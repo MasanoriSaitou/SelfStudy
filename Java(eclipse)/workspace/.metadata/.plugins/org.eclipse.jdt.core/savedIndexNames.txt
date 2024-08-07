@@ -1,4 +1,4 @@
-INDEX VERSION 1.131+E:\Users\管理者\デスクトップ\制作系\ﾌﾟﾛｸﾞﾗﾑ関係\◎自己学習\SelfStudy\Java(eclipse)\workspace\.metadata\.plugins\org.eclipse.jdt.core
-3721861684.index
-479335008.index
+INDEX VERSION 1.132+C:\Users\俺\Desktop\デスクトップ\制作系\プログラム関係\格闘ゲームプロジェクト\Java\SelfStudy\Java(eclipse)\workspace\.metadata\.plugins\org.eclipse.jdt.core
+1001029585.index
 1865797976.index
+479335008.index

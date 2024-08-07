@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <libraryInfos>
+    <libraryInfo home="C:\pleiades\2023-03\java\17" version="17.0.6"/>
     <libraryInfo home="C:\pleiades\2022-06\java\11" version="11.0.15"/>
     <libraryInfo home="C:\pleiades\2022-06\java\8" version="1.8.0_332">
         <bootpath>
