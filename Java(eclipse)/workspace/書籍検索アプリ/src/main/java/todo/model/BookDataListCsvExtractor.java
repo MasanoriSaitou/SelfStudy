@@ -7,13 +7,28 @@ import 自作ライブラリ.TextFileLib;
 
 public class BookDataListCsvExtractor {
 	
+	private interface FunctionPointer {
+		
+		// Method signatures of pointed method
+		String methodSignature(BookDataBean bookData);
+	}
+	
 	private BookDataBean[] bookDataBeans;
+	private final FunctionPointer[] SEARCH_TARGET_ARRAY = {
+		//検索は上のものから順に探す
+		//本のタイトルで検索
+		this::getBookName,
+		//著者で検索
+		this::getAuthor,
+		//架空ISBNコードで検索
+		this::getFictitiousISBN,
+	};
 	
 	//----------
 	//コンストラクタ
-	public BookDataListCsvExtractor(String filePath) {
+	public BookDataListCsvExtractor() {
 		
-		csvExtractor(filePath);
+		bookDataBeans = new BookDataBean[0];
 	}
 	
 	//------------
@@ -47,24 +62,15 @@ public class BookDataListCsvExtractor {
 		return bookData.getFictitiousISBN();
 	}
 	
-	private interface FunctionPointer {
+	public BookDataBean[] allBookDataClone() {
 		
-		// Method signatures of pointed method
-		String methodSignature(BookDataBean bookData);
+		return bookDataBeans.clone();
 	}
 	
 	public ArrayList<BookDataBean> keyWordSearch(String keyWord) {
 		
 		var searchResultList = new ArrayList<BookDataBean>();
-		FunctionPointer[] searchTargetArray = {
-			//本のタイトルで検索
-			this::getBookName,
-			//著者で検索
-			this::getAuthor,
-			//架空ISBNコードで検索
-			this::getFictitiousISBN,
-		};
-		for(FunctionPointer search:searchTargetArray) {
+		for(FunctionPointer search:SEARCH_TARGET_ARRAY) {
 			
 			for(BookDataBean bookData : bookDataBeans) {
 				
@@ -74,6 +80,20 @@ public class BookDataListCsvExtractor {
 				}
 			}	
 		}
+		return searchResultList;
+	}
+	
+	public ArrayList<BookDataBean> bookTitleNameSearch(String bookTitleName) {
+		
+		var searchResultList = new ArrayList<BookDataBean>();
+		for(BookDataBean bookData : bookDataBeans) {
+			
+			//SEARCH_TARGET_ARRAY[0]：本のタイトルでの検索のみ実施
+			if(stringRegexCheck(SEARCH_TARGET_ARRAY[0].methodSignature(bookData),bookTitleName)) {
+				
+				searchResultList.add(bookData);
+			}
+		}	
 		return searchResultList;
 	}
 	

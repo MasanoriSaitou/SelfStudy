@@ -80,7 +80,7 @@ public class BookDataBean implements Serializable{
 		fictitiousISBN = "";
 		bookName = "";
 		author = "";
-		publicationDate = LocalDate.of(0000,00,00);
+		publicationDate = LocalDate.of(0000,01,01);
 		issuer = "";
 		publisher = "";
 		printingShop = "";
@@ -95,5 +95,19 @@ public class BookDataBean implements Serializable{
 		issuer 			= strs[4];
 		publisher 		= strs[5];
 		printingShop 	= strs[6];
+	}
+	
+	@Override
+	public BookDataBean clone() {
+		
+		try {
+			
+			var newIns = (BookDataBean)super.clone();
+			newIns.publicationDate = publicationDate;
+			return newIns;
+		}catch(CloneNotSupportedException ex) {
+			
+			return new BookDataBean();			
+		}
 	}
 }

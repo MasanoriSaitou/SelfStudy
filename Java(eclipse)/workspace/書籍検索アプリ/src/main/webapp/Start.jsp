@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body onLoad = "setTimeout(function(){ window.location.href = 'BookSearchServlet'},1*1000)">
-	<h1>ようこそ </h1>
+	<h1>こんにちは、ようこそ </h1>
 </body>
 </html>
